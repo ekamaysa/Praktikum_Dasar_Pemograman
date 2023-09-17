@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Toko {
+    public static void main(String[] argumenInput) {
+        Scanner input = new Scanner(System.in);
+        int pesanan, jumlah;
+        double totalakhir = 0, total = 0;
+        String jawaban;
+        String kataSambutan = "=============================";
+        kataSambutan += "\nSelamat datang di Toko Jeka";
+        kataSambutan += "\nSilahkan pilih barang yang akan dibeli";
+        kataSambutan += "\n1. Sepatu Jeks ($10)";
+        kataSambutan += "\n2. Kaos Jeks ($8)";
+        kataSambutan += "\n3. Hoodie Jeks ($9)";
+        kataSambutan += "\n4. Sendal Jeks ($6)";
+        kataSambutan += "\n5. Jaket Jeks ($12)";
+        kataSambutan += "\n============================";
+        System.out.println(kataSambutan);
+
+        String[] nama = { "Sepatu Jeks", "Kaos Jeks", "Hoodie Jeks", "Sendal Jeks", "Jaket Jeks" };
+        int[] harga = { 10, 8, 9, 6, 12 }; // Prices in dollars
+
+        do {
+            totalakhir = total;
+            System.out.println("\nMasukan nomer barang");
+            pesanan = input.nextInt();
+
+            while (pesanan > 5 || pesanan < 1) {
+                System.out.println("Mohon masukkan nomer sesuai barang yang tersedia");
+                System.out.println("\nMasukan nomer barang");
+                pesanan = input.nextInt();
+            }
+
+            System.out.println("Berapa jumlah barang yang akan dibeli?");
+            jumlah = input.nextInt();
+
+            switch (pesanan) {
+                case 1:
+                    System.out.println("Anda memesan " + nama[0] + " sebanyak " + jumlah);
+                    System.out.println("Harga per barang = $" + harga[0] + ",-");
+                    total = totalakhir + (harga[0] * jumlah);
+                    break;
+                // You need to handle cases 2, 3, 4, and 5 similarly.
+                // Add additional cases for the other items.
+
+                default:
+                    System.out.println("Nomor barang tidak valid.");
+                    break;
+            }
+
+            System.out.println("Total belanjaan Anda: $" + total);
+
+            System.out.println("Apakah Anda ingin memesan barang lain? (ya/tidak)");
+            jawaban = input.next();
+        } while (jawaban.equals("ya"));
+
+        System.out.println("Terima kasih telah berbelanja di Toko Jeka!");
+    }
+}
