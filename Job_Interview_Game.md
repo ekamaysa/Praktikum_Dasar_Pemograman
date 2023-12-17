@@ -68,6 +68,16 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
     Database : 
 
 ## 6. Desain User Experience dan User Interface
+![GOYPES 1-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/a48af216-e205-4458-9ce1-d1b28042dba7)
+![GOYPES 2-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/e1fd4d7b-fe32-4e46-b65e-a411bb4c26c8)
+![GOYPES 3-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/d9a89351-d670-473a-957f-b499db091009)
+![GOYPES 4-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/63696f27-7213-4548-90d3-5f934660a4d7)
+![GOYPES 5-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/cb092d5f-8957-4a63-9fc3-ccd7d6650365)
+![GOYPES 6-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/2f357670-d3a8-46a3-a386-4055d67976ee)
+![GOYPES 7-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/3e33ea8b-beae-4035-ac49-f2556c37e5c6)
+![GOYPES 8-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/daa3c6ec-da88-4e58-84c0-b425be25c7eb)
+![GOYPES 9-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/bbfbfc98-74fe-4317-aa5d-e21972277181)
+
 
 ## 7. Demonstrasi Video
 
