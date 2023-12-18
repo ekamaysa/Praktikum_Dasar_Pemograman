@@ -54,10 +54,7 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
 ## 3. Struktur Data
 <img width="761" alt="struktur data game" src="https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/e1ae8860-6b60-49f5-ac16-e89d4ac78fb9">
 
-
-## 4. Arsitektur Sistem
-
-## 5. Teknologi, Library, dan Framework
+## 4. Teknologi, Library, dan Framework
 
     UI/UX Design : Canva
     Web Server : 
@@ -67,7 +64,7 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
     Framework 
     Database : 
 
-## 6. Desain User Experience dan User Interface
+## 5. Desain User Experience dan User Interface
 ![GOYPES 1-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/a48af216-e205-4458-9ce1-d1b28042dba7)
 ![GOYPES 2-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/e1fd4d7b-fe32-4e46-b65e-a411bb4c26c8)
 ![GOYPES 3-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/d9a89351-d670-473a-957f-b499db091009)
@@ -81,13 +78,5 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
 
 ## 7. Demonstrasi Video
 
-
-## 8. Bagaimana mesin komputasi dan sistem operasi berperan dalam produk teknologi informasimu ?
-
-## 9. Bagaimana algoritma, struktur data, dan bahasa pemrograman berperan dalam produk teknologi informasimu ?
-
-## 10. Bagaimana metode pengembangan perangkat lunak / Software Development Life Cycle berperan dalam produk teknologi informasimu ?
-
-## 11. Bagaimana database / sistem basis data berperan dalam produk teknologi informasimu 
 
 
