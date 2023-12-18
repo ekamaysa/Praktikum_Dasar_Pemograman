@@ -2,15 +2,15 @@
 
 Goypes adalah game yang menceritakan tentang seorang gadis yang sedang berkebun dibelakang halaman rumahnya, namun ketika gadis tersebut sedang membersihkan dan merawat tanamannya tiba-tiba berdatangan hama-hama yang entah dari mana dan gadis ini berusaha membunuh hama tersebut dengan sekuat tenaga agar tamanannya tidak rusak oleh hama-hama tersebut. Latar belakang game ini saya terinspirasi dari ayah saya yang seorang pedagang sayuran yang dimana beliau setiap harinya harus memilah dan memilih barang dagangan yang layak untuk di jual, dikarena banyak sekali sayuran yang kurang sempurna akibat adanya hama-hama. 
 
-## 1.2. Deksripsi Teknologi Informasi Dan Alur Cerita
+## 1.2. Deksripsi Game Dan Alur Cerita
 
-Game Goypes ini adalah sebuah game yang cocok untuk yang memiliki kesenangan terhadap perkebunan dan senang bersih-bersih, karena dalam Goypes ini memiliki cara bermain dengan mudah dan lumayan menantang. 
+Game Goypes ini adalah sebuah game yang cocok untuk yang memiliki kesenangan terhadap perkebunan dan senang bersih-bersih, karena dalam Goypes ini memiliki cara bermain dengan mudah dan lumayan menantang. Alur cerita dalam game ini yaitu pertama ketika pengguna membuka game akan ditampilkan menu play, setelah pengguna memilih menu play, pengguna bisa memilih pemain  yang akan digunakan dalam permainan, bisa juga memilih senjata yang akan digunakan untuk menyerang hama atau musuh, dan juga bisa memilih tanaman apa saja yang akan ditanam dan dirawat oleh pemain, setelah selesai memilih karakter, pemain akan langsung memasuki arena permainan, alur bermainnya yaitu pemain bertugas untuk menjaga dan merawat tanamannya supaya tetap utuh, namun tiba-tiba ada beberapa hama yang muncul entah dari mana, pemain harus menyerang hama-hama tersebut supaya tanamannya tetap utuh, ketika pemain berhasil membunuh hama, pemainakan mendapatkan koin emas, namun ketika hama berhasil menyerang tanaman, tanamannya akan hilang karena seolah-olah hama itu memakan habis tanaman-tanaman, dan supaya bisa menanam tanamannya lagi pemain harus membeli tanaman itu dengan koin emas yang didapatkan ketika berhasil membunuh hama, game ini akan berhasil ketika pemain berhasil menjaga dan merawat tanamannya tetap utuh sampai hama-hamanya berhasil terbunuh semua, begitupun sebaliknya ketika pemain tidak berhasil merawat dan menjaga tanamanya sehingga hama-hama berhasil memakan habis tanamanya game ini akan berakhir dengan game over.
 
 ## 1.3. Branding
 
 Merk : Goypes
 
-Tagline : "Guarduan of Gaeden: Merawat Kebun, Merayakan Keindahan Alam!" "
+Tagline : "Guarduan of Garden: Merawat Kebun, Merayakan Keindahan Alam!" "
 
 Campaign :  Bagaimana membuat Game yang membuat penggunanya senang, dapat menghilangkan rasa bosan, dan menginspirasi tentang kebersihan lingkungan
 
@@ -25,7 +25,7 @@ User experience theme:
 - Sederhana
 - Menyenangkan
 - Menghibur
-- Warna : Bernuansa berkebun (hijau)
+- Warna : Bernuansa perkebuanan (hijau)
    
 ## 2. User Story
 
