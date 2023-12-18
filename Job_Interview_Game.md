@@ -78,5 +78,14 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
 
 ## 7. Demonstrasi Video
 
+## 8. Bagaimana konsep variable, data type dan operator pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+
+
+## 9. Bagaimana konsep boolean dan conditions pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+## 10. Bagaimana konsep looping dan array pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+## 11. Bagaimana konsep method pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+## 12. Bagaimana konsep class pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+## 13. Jelaskan algoritma buatan sendiri yang digunakan pada pembuatan game ini !
+
 
 
