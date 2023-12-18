@@ -80,6 +80,114 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
 
 ## 8. Bagaimana konsep variable, data type dan operator pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 
+**Pada Class Pemain**
+
+class Pemain {
+    GameGoypes gameIni;
+
+    Pemain(GameGoypes gameIni) {
+        this.gameIni = gameIni;
+    }
+
+    // Attribute
+    int[] posisi = new int[] { 29, 10 }; // {x, y}
+
+    // Method
+    void lihatPosisi() {
+        System.out.println("Posisi sekarang x: " + this.ambilX() + ", y: " + this.ambilY());
+    }
+
+    void jalan(int langkahX, int langkahY) {
+        this.posisi[0] = this.posisi[0] + langkahX;
+        this.posisi[1] = this.posisi[1] + langkahY;
+
+        this.aksiBertemuObjekLain();
+    }
+
+    void aksiBertemuObjekLain() {
+        System.out.println("aksiBertemuObjekLain()");
+
+        for (int i = 0; i < this.gameIni.kumpulanTanaman.size(); i++) {
+
+            System.out.println("Cek tanaman " + this.gameIni.kumpulanTanaman.get(i).tipe);
+            System.out.println("posisi X " + this.gameIni.kumpulanTanaman.get(i).posisi[0]);
+            System.out.println("posisi Y " + this.gameIni.kumpulanTanaman.get(i).posisi[1]);
+
+            System.out.println("posisi X pemain " + this.posisi[0]);
+            System.out.println("posisi Y pemain " + this.posisi[1]);
+
+            if (this.posisi[0] == this.gameIni.kumpulanTanaman.get(i).posisi[0]
+                    && this.posisi[1] == this.gameIni.kumpulanTanaman.get(i).posisi[1]) {
+                System.out.println(" WOW INI DIA KETEMU!");
+            }
+        }
+
+        // Pemain bertemu tanaman
+
+        // Pemain bertemu hama
+    }
+
+    int ambilX() {
+        return this.posisi[0];
+    }
+
+    int ambilY() {
+        return this.posisi[1];
+    }
+    }
+
+- Konsep Variable, Data Type, dan Operator:
+
+Variable gameIni bertipe GameGoypes.
+Array posisi bertipe data int[].
+Dalam method jalan, terdapat penggunaan operator aritmatika (+) untuk mengubah posisi pemain.
+
+- Konsep Boolean dan Conditions:
+
+Method aksiBertemuObjekLain() mengandung kondisi (if statement) yang menggunakan operator perbandingan (==) untuk mengecek apakah posisi pemain bertemu dengan posisi tanaman.
+
+- Konsep Looping dan Array:
+
+Terdapat penggunaan loop for untuk iterasi melalui this.gameIni.kumpulanTanaman.
+Dalam loop tersebut, terdapat kondisi dan pernyataan yang dieksekusi jika pemain bertemu dengan tanaman pada posisi tertentu.
+
+- Method:
+
+Method lihatPosisi() digunakan untuk mencetak posisi pemain.
+Method jalan() digunakan untuk memindahkan pemain dan memanggil method aksiBertemuObjekLain().
+Method aksiBertemuObjekLain() melakukan aksi ketika pemain bertemu dengan objek lain.
+
+- Konsep Class:
+
+Terdapat definisi class Pemain.
+Class ini memiliki atribut (posisi) dan beberapa method (lihatPosisi(), jalan(), aksiBertemuObjekLain(), ambilX(), ambilY()).
+
+**Pada Class Hama**
+
+class Hama {
+
+    int tipe;
+    
+    int[] posisi = new int[] { 0, 0 }; // {x, y}
+    
+    boolean isAktif;
+    }
+
+- Konsep Variable, Data Type, dan Operator:
+
+int tipe adalah variabel dengan tipe data int.
+int[] posisi adalah variabel dengan tipe data array int[].
+boolean isAktif adalah variabel dengan tipe data boolean.
+
+- Konsep Boolean dan Conditions:
+
+boolean isAktif digunakan untuk menyatakan apakah hama aktif atau tidak. Ini dapat dianggap sebagai kondisi boolean.
+
+- Konsep Class:
+
+Terdapat definisi class Hama.
+Class ini memiliki atribut (tipe, posisi, isAktif).
+Secara default, Java memberikan nilai awal untuk int dan boolean, yaitu 0 dan false.
 
 ## 9. Bagaimana konsep boolean dan conditions pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 ## 10. Bagaimana konsep looping dan array pada bahasa pemrograman digunakan dalam pembuatan game ini ?
