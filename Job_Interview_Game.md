@@ -80,9 +80,138 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
 
 ## 8. Bagaimana konsep variable, data type dan operator pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 
-**Pada Class Pemain**
+**Pada Class GameGoypes**
+  
+   import java.util.ArrayList;
+   
+   import java.util.Random;
+   
+   public class GameGoypes {
+   
+    Pemain pemain; // Attribute dari Object Game
+    ArrayList<Tanaman> kumpulanTanaman = new ArrayList<Tanaman>(); //
+    ArrayList<Hama> kumpulanHama = new ArrayList<Hama>();
+
+    // Constructor
+    GameGoypes() {
+        System.out.println("Permainan ini dimulai!!");
+
+        this.pemain = new Pemain(this);
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "JAGUNG";
+                posisi[0] = 10;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PUMKIN";
+                posisi[0] = 20;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PAPRIKA";
+                posisi[0] = 30;
+                posisi[1] = 10;
+            }
+        });
+
+        int jumlahAwalHama = 4;
+
+        for (int i = 0; i < jumlahAwalHama; i++) {
+
+            Hama hamaBaru = new Hama();
+
+            Random mesinRandom = new Random();
+
+            hamaBaru.posisi[0] = mesinRandom.nextInt(20);
+            hamaBaru.posisi[1] = mesinRandom.nextInt(20);
+
+            this.kumpulanHama.add(hamaBaru);
+
+            System.out.println("Buat hama ke " + (i + 1) + ", X: " + hamaBaru.posisi[0] +
+                    " Y: " + hamaBaru.posisi[1]);
+        }
+
+        this.pemain.lihatPosisi();
+        this.pemain.jalan(1, 0);
+        this.pemain.lihatPosisi();
+    }
+
+    public static void main(String[] args) {
+
+        GameGoypes game = new GameGoypes();
+    }
+    }
+
+**Variable (Variabel):**
+- pemain: Variabel yang merupakan objek dari kelas Pemain. Ini adalah atribut dari objek GameGoypes.
+- kumpulanTanaman: Variabel yang merupakan objek dari kelas ArrayList<Tanaman>. Ini digunakan untuk menyimpan daftar tanaman dalam permainan.
+- kumpulanHama: Variabel yang merupakan objek dari kelas ArrayList<Hama>. Ini digunakan untuk menyimpan daftar hama dalam permainan.
+- jumlahAwalHama: Variabel yang menyimpan jumlah awal hama yang akan dibuat.
+  
+**Tipe Data (Data Type):**
+
+- Pemain: Kelas yang mewakili pemain dalam permainan.
+- Tanaman: Kelas yang mewakili tanaman dalam permainan.
+- Hama: Kelas yang mewakili hama dalam permainan.
+- ArrayList<Tanaman>: Tipe data untuk menyimpan objek tanaman dalam bentuk daftar dinamis.
+- ArrayList<Hama>: Tipe data untuk menyimpan objek hama dalam bentuk daftar dinamis.
+- int: Tipe data untuk menyimpan bilangan bulat.
+-Random: Kelas yang menyediakan fungsi-fungsi untuk menghasilkan angka acak.
+
+**Operator:**
+
+- =: Operator assignment, digunakan untuk memberikan nilai pada variabel.
+- +: Operator penjumlahan, digunakan untuk menghitung nilai yang akan ditampilkan pada output.
+- []: Operator indeks, digunakan untuk mengakses elemen dalam array atau atribut array dari objek.
+
+**Constructor (Konstruktor):**
+
+- GameGoypes(): Konstruktor untuk kelas GameGoypes. Di dalam konstruktor ini, permainan dimulai dengan inisialisasi pemain, penambahan tanaman dan hama ke dalam daftar, dan beberapa tindakan pemain.
+  
+**Method (Metode):**
+  
+- main(String[] args): Metode utama yang dipanggil saat program dijalankan. Di dalamnya, objek GameGoypes dibuat, dan permainan dimulai.
+
+**Pada class Hama**
+
+class Hama {
+
+    int tipe;
+    
+    int[] posisi = new int[] { 0, 0 }; // {x, y}
+    
+    boolean isAktif;
+    }
+
+**Variabel (Variable):**
+
+- tipe: Variabel bertipe data int yang menyimpan informasi mengenai tipe hama.
+- posisi: Variabel bertipe array int[] yang menyimpan posisi hama dalam dua dimensi (koordinat x dan y).
+- isAktif: Variabel bertipe data boolean yang menyimpan status aktivitas hama.
+  
+**Tipe Data (Data Type):**
+
+- int: Tipe data untuk menyimpan bilangan bulat, digunakan untuk tipe dan elemen-elemen array posisi.
+- int[]: Tipe data untuk menyimpan array dari tipe data int, digunakan untuk menyimpan posisi hama.
+- boolean: Tipe data yang menyimpan nilai kebenaran (true atau false), digunakan untuk menyimpan status aktivitas hama.
+
+**Operator:**
+
+- =: Operator assignment, digunakan untuk memberikan nilai pada variabel.
+- []: Operator indeks, digunakan untuk mengakses elemen-elemen dalam array.
+
+**Pada class Pemain**
 
 class Pemain {
+
     GameGoypes gameIni;
 
     Pemain(GameGoypes gameIni) {
@@ -134,37 +263,135 @@ class Pemain {
     int ambilY() {
         return this.posisi[1];
     }
+}
+
+**Variabel (Variable):**
+
+- gameIni: Variabel yang menyimpan referensi ke objek GameGoypes, yang digunakan untuk berinteraksi dengan elemen-elemen dalam permainan.
+- posisi: Variabel bertipe array int[] yang menyimpan posisi pemain dalam dua dimensi (koordinat x dan y).
+
+**Tipe Data (Data Type):**
+
+- int: Tipe data untuk menyimpan bilangan bulat, digunakan untuk elemen-elemen array dan variabel bertipe int.
+- int[]: Tipe data untuk menyimpan array dari tipe data int, digunakan untuk menyimpan posisi pemain.
+
+**Operator:**
+
+- =: Operator assignment, digunakan untuk memberikan nilai pada variabel.
+- +: Operator penjumlahan, digunakan untuk menghitung posisi baru pemain setelah bergerak.
+
+**Pada class Tanaman**
+
+class Tanaman {
+   
+    String tipe;
+    
+    int[] posisi = new int[] { 0, 0 }; // {x, y}
+    
+    boolean isAktif = true;
+}
+
+**Variabel (Variable):**
+
+- tipe: Variabel bertipe String yang menyimpan informasi tentang jenis tanaman.
+- posisi: Variabel bertipe array int[] yang menyimpan posisi tanaman dalam dua dimensi (koordinat x dan y).
+- isAktif: Variabel bertipe boolean yang menandakan apakah tanaman aktif atau tidak.
+
+**Tipe Data (Data Type):**
+
+- String: Tipe data untuk menyimpan teks atau karakter, digunakan untuk menyimpan jenis tanaman.
+- int: Tipe data untuk menyimpan bilangan bulat, digunakan untuk elemen-elemen array dan variabel bertipe int.
+- int[]: Tipe data untuk menyimpan array dari tipe data int, digunakan untuk menyimpan posisi tanaman.
+- boolean: Tipe data untuk menyimpan nilai kebenaran (true atau false), digunakan untuk menandai apakah tanaman aktif atau tidak.
+
+**Operator:**
+
+- =: Operator assignment, digunakan untuk memberikan nilai pada variabel.
+
+## 9. Bagaimana konsep boolean dan conditions pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+
+**Pada Class GameGoypes**
+  
+   import java.util.ArrayList;
+   
+   import java.util.Random;
+   
+   public class GameGoypes {
+   
+    Pemain pemain; // Attribute dari Object Game
+    ArrayList<Tanaman> kumpulanTanaman = new ArrayList<Tanaman>(); //
+    ArrayList<Hama> kumpulanHama = new ArrayList<Hama>();
+
+    // Constructor
+    GameGoypes() {
+        System.out.println("Permainan ini dimulai!!");
+
+        this.pemain = new Pemain(this);
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "JAGUNG";
+                posisi[0] = 10;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PUMKIN";
+                posisi[0] = 20;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PAPRIKA";
+                posisi[0] = 30;
+                posisi[1] = 10;
+            }
+        });
+
+        int jumlahAwalHama = 4;
+
+        for (int i = 0; i < jumlahAwalHama; i++) {
+
+            Hama hamaBaru = new Hama();
+
+            Random mesinRandom = new Random();
+
+            hamaBaru.posisi[0] = mesinRandom.nextInt(20);
+            hamaBaru.posisi[1] = mesinRandom.nextInt(20);
+
+            this.kumpulanHama.add(hamaBaru);
+
+            System.out.println("Buat hama ke " + (i + 1) + ", X: " + hamaBaru.posisi[0] +
+                    " Y: " + hamaBaru.posisi[1]);
+        }
+
+        this.pemain.lihatPosisi();
+        this.pemain.jalan(1, 0);
+        this.pemain.lihatPosisi();
     }
 
-- Konsep Variable, Data Type, dan Operator:
+    public static void main(String[] args) {
 
-Variable gameIni bertipe GameGoypes.
-Array posisi bertipe data int[].
-Dalam method jalan, terdapat penggunaan operator aritmatika (+) untuk mengubah posisi pemain.
+        GameGoypes game = new GameGoypes();
+    }
+    }
 
-- Konsep Boolean dan Conditions:
+**Variabel Boolean:**
 
-Method aksiBertemuObjekLain() mengandung kondisi (if statement) yang menggunakan operator perbandingan (==) untuk mengecek apakah posisi pemain bertemu dengan posisi tanaman.
+- ArrayList<Tanaman> kumpulanTanaman: Variabel ini adalah sebuah ArrayList dari objek Tanaman. Masing-masing elemen memiliki atribut isAktif yang bertipe boolean. Atribut ini menunjukkan apakah tanaman tersebut aktif atau tidak. Dalam hal ini, isAktif adalah variabel boolean yang menentukan apakah tanaman aktif atau tidak.
 
-- Konsep Looping dan Array:
+**Conditions (Kondisi):**
+- Pada bagian pembuatan tanaman, ada kondisi yang mengecek jenis tanaman dan menetapkan posisi berdasarkan jenisnya.
+- Selanjutnya, terdapat loop for untuk membuat objek Hama dan menambahkannya ke dalam ArrayList kumpulanHama. Di dalam loop tersebut, terdapat kondisi yang memastikan bahwa posisi Hama yang di-generate secara acak tidak bertabrakan dengan posisi tanaman yang ada.
+- Dalam method aksiBertemuObjekLain() pada class Pemain, terdapat kondisi yang mengecek apakah pemain bertemu dengan tanaman. Dalam kondisi ini, akan dicetak pesan jika posisi pemain sama dengan posisi tanaman tertentu.
 
-Terdapat penggunaan loop for untuk iterasi melalui this.gameIni.kumpulanTanaman.
-Dalam loop tersebut, terdapat kondisi dan pernyataan yang dieksekusi jika pemain bertemu dengan tanaman pada posisi tertentu.
+  **Pada class Hama**
 
-- Method:
-
-Method lihatPosisi() digunakan untuk mencetak posisi pemain.
-Method jalan() digunakan untuk memindahkan pemain dan memanggil method aksiBertemuObjekLain().
-Method aksiBertemuObjekLain() melakukan aksi ketika pemain bertemu dengan objek lain.
-
-- Konsep Class:
-
-Terdapat definisi class Pemain.
-Class ini memiliki atribut (posisi) dan beberapa method (lihatPosisi(), jalan(), aksiBertemuObjekLain(), ambilX(), ambilY()).
-
-**Pada Class Hama**
-
-class Hama {
+  class Hama {
 
     int tipe;
     
@@ -173,23 +400,101 @@ class Hama {
     boolean isAktif;
     }
 
-- Konsep Variable, Data Type, dan Operator:
+**Konsep Boolean:**
 
-int tipe adalah variabel dengan tipe data int.
-int[] posisi adalah variabel dengan tipe data array int[].
-boolean isAktif adalah variabel dengan tipe data boolean.
+- boolean adalah tipe data yang hanya memiliki dua nilai, yaitu true atau false. Dalam konteks class Hama, variabel isAktif dideklarasikan sebagai boolean. Ini mungkin digunakan untuk menentukan apakah suatu hama aktif atau tidak.
+- Ketika isAktif diatur sebagai true, itu bisa berarti hama tersebut aktif. Sebaliknya, ketika diatur sebagai false, itu bisa berarti hama tersebut tidak aktif.
 
-- Konsep Boolean dan Conditions:
+**Konsep Conditions:**
 
-boolean isAktif digunakan untuk menyatakan apakah hama aktif atau tidak. Ini dapat dianggap sebagai kondisi boolean.
+- Konsep conditions muncul ketika kita menggunakan struktur kondisional untuk mengambil keputusan berdasarkan kondisi tertentu. Ini melibatkan penggunaan pernyataan if dan else.
 
-- Konsep Class:
+- Dalam class Hama, kita mungkin akan menggunakan isAktif untuk membuat keputusan berdasarkan apakah hama tersebut aktif atau tidak.
+- Dalam contoh ini, metode lakukanAksi menggunakan kondisi untuk memeriksa nilai isAktif. Jika isAktif adalah true, maka blok kode dalam if akan dijalankan. Jika isAktif adalah false, maka blok kode dalam else akan dijalankan.
+- Ini memberikan fleksibilitas untuk mengatur perilaku atau aksi berdasarkan kondisi objek Hama.
 
-Terdapat definisi class Hama.
-Class ini memiliki atribut (tipe, posisi, isAktif).
-Secara default, Java memberikan nilai awal untuk int dan boolean, yaitu 0 dan false.
+**Pada class Pemain**
 
-## 9. Bagaimana konsep boolean dan conditions pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+class Pemain {
+
+    GameGoypes gameIni;
+
+    Pemain(GameGoypes gameIni) {
+        this.gameIni = gameIni;
+    }
+
+    // Attribute
+    int[] posisi = new int[] { 29, 10 }; // {x, y}
+
+    // Method
+    void lihatPosisi() {
+        System.out.println("Posisi sekarang x: " + this.ambilX() + ", y: " + this.ambilY());
+    }
+
+    void jalan(int langkahX, int langkahY) {
+        this.posisi[0] = this.posisi[0] + langkahX;
+        this.posisi[1] = this.posisi[1] + langkahY;
+
+        this.aksiBertemuObjekLain();
+    }
+
+    void aksiBertemuObjekLain() {
+        System.out.println("aksiBertemuObjekLain()");
+
+        for (int i = 0; i < this.gameIni.kumpulanTanaman.size(); i++) {
+
+            System.out.println("Cek tanaman " + this.gameIni.kumpulanTanaman.get(i).tipe);
+            System.out.println("posisi X " + this.gameIni.kumpulanTanaman.get(i).posisi[0]);
+            System.out.println("posisi Y " + this.gameIni.kumpulanTanaman.get(i).posisi[1]);
+
+            System.out.println("posisi X pemain " + this.posisi[0]);
+            System.out.println("posisi Y pemain " + this.posisi[1]);
+
+            if (this.posisi[0] == this.gameIni.kumpulanTanaman.get(i).posisi[0]
+                    && this.posisi[1] == this.gameIni.kumpulanTanaman.get(i).posisi[1]) {
+                System.out.println(" WOW INI DIA KETEMU!");
+            }
+        }
+
+        // Pemain bertemu tanaman
+
+        // Pemain bertemu hama
+    }
+
+    int ambilX() {
+        return this.posisi[0];
+    }
+
+    int ambilY() {
+        return this.posisi[1];
+    }
+}
+
+**Konsep Boolean:**
+- Tipe data boolean digunakan pada atribut isAktif pada class Pemain. Ini mungkin digunakan untuk menentukan apakah pemain aktif atau tidak. Namun, pada contoh yang Anda berikan, atribut isAktif tidak digunakan.
+
+**Konsep Conditions:**
+- Konsep conditions muncul ketika kita menggunakan struktur kondisional untuk mengambil keputusan berdasarkan kondisi tertentu. Ini melibatkan penggunaan pernyataan if dan else.
+- Pada class Pemain, metode aksiBertemuObjekLain menggunakan kondisi untuk memeriksa apakah pemain bertemu dengan tanaman tertentu.
+
+**Pada class Tanaman**
+
+class Tanaman {
+   
+    String tipe;
+    
+    int[] posisi = new int[] { 0, 0 }; // {x, y}
+    
+    boolean isAktif = true;
+}
+
+**Konsep Boolean:**
+- Tipe data boolean digunakan pada atribut isAktif pada class Tanaman. Ini mungkin digunakan untuk menentukan apakah tanaman aktif atau tidak. Pada contoh yang Anda berikan, atribut isAktif diinisialisasi dengan nilai true.
+
+**Konsep Conditions:**
+- Konsep conditions muncul ketika kita menggunakan struktur kondisional untuk mengambil keputusan berdasarkan kondisi tertentu. Ini melibatkan penggunaan pernyataan if, else, dan sejenisnya.
+- Meskipun pada contoh yang Anda berikan, atribut isAktif diinisialisasi dengan nilai tetap (true), di dunia nyata, kita mungkin menggantinya berdasarkan beberapa kondisi tertentu selama waktu permainan berlangsung.
+  
 ## 10. Bagaimana konsep looping dan array pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 ## 11. Bagaimana konsep method pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 ## 12. Bagaimana konsep class pada bahasa pemrograman digunakan dalam pembuatan game ini ?
