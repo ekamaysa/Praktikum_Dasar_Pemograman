@@ -496,9 +496,364 @@ class Tanaman {
 - Meskipun pada contoh yang Anda berikan, atribut isAktif diinisialisasi dengan nilai tetap (true), di dunia nyata, kita mungkin menggantinya berdasarkan beberapa kondisi tertentu selama waktu permainan berlangsung.
   
 ## 10. Bagaimana konsep looping dan array pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+
+**Pada Class GameGoypes**
+  
+   import java.util.ArrayList;
+   
+   import java.util.Random;
+   
+   public class GameGoypes {
+   
+    Pemain pemain; // Attribute dari Object Game
+    ArrayList<Tanaman> kumpulanTanaman = new ArrayList<Tanaman>(); //
+    ArrayList<Hama> kumpulanHama = new ArrayList<Hama>();
+
+    // Constructor
+    GameGoypes() {
+        System.out.println("Permainan ini dimulai!!");
+
+        this.pemain = new Pemain(this);
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "JAGUNG";
+                posisi[0] = 10;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PUMKIN";
+                posisi[0] = 20;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PAPRIKA";
+                posisi[0] = 30;
+                posisi[1] = 10;
+            }
+        });
+
+        int jumlahAwalHama = 4;
+
+        for (int i = 0; i < jumlahAwalHama; i++) {
+
+            Hama hamaBaru = new Hama();
+
+            Random mesinRandom = new Random();
+
+            hamaBaru.posisi[0] = mesinRandom.nextInt(20);
+            hamaBaru.posisi[1] = mesinRandom.nextInt(20);
+
+            this.kumpulanHama.add(hamaBaru);
+
+            System.out.println("Buat hama ke " + (i + 1) + ", X: " + hamaBaru.posisi[0] +
+                    " Y: " + hamaBaru.posisi[1]);
+        }
+
+        this.pemain.lihatPosisi();
+        this.pemain.jalan(1, 0);
+        this.pemain.lihatPosisi();
+    }
+
+    public static void main(String[] args) {
+
+        GameGoypes game = new GameGoypes();
+    }
+    }
+
+
+**Looping untuk Inisialisasi Tanaman:**
+
+- Dalam loop ini, tiga objek Tanaman dibuat dengan tipe yang berbeda ("JAGUNG", "PUMPKIN", "PAPRIKA") dan posisi yang berbeda (dengan X bertambah setiap iterasi).
+
+**Looping untuk Inisialisasi Hama:**
+
+- Dalam loop ini, empat objek Hama dibuat dengan posisi acak di antara 0 dan 19. Informasi tentang posisi setiap hama dicetak ke konsol.
+
+**Looping untuk Menampilkan Posisi Pemain:**
+
+- Di sini, pemain melihat posisinya saat ini, kemudian pemain bergerak satu langkah ke kanan (X + 1), dan kemudian pemain melihat posisinya lagi. Meskipun bukan loop yang tradisional, ini adalah urutan langkah-langkah yang dijalankan berurutan, menunjukkan perubahan posisi pemain.
+
+**Array pada Objek Tanaman dan Hama:**
+
+- Dua ArrayList (kumpulanTanaman dan kumpulanHama) digunakan untuk menyimpan objek-objek Tanaman dan Hama. ArrayList ini bekerja seperti array dinamis yang dapat menyesuaikan ukurannya secara otomatis.
+
+**Array untuk Posisi Objek Tanaman dan Hama:**
+
+- Posisi objek Tanaman dan Hama disimpan dalam bentuk array. posisi[0] dan posisi[1] merepresentasikan koordinat X dan Y.
+
+**Jadi, konsep array digunakan untuk menyimpan data posisi dan tipe objek, sementara looping digunakan untuk menginisialisasi beberapa objek dengan nilai yang berbeda.**
+
+**Pada class Hama**
+
+class Hama {
+
+    int tipe;
+    
+    int[] posisi = new int[] { 0, 0 }; // {x, y}
+    
+    boolean isAktif;
+    }
+
+**Array pada Posisi:**
+
+- Pada bagian ini, posisi adalah sebuah array dengan dua elemen yang merepresentasikan koordinat objek Hama di bidang dua dimensi. Elemen pertama (posisi[0]) adalah koordinat X, dan elemen kedua (posisi[1]) adalah koordinat Y. Dengan menggunakan array, posisi objek Hama dapat dengan mudah direpresentasikan dan diakses.
+
+**Meskipun tidak ada penggunaan looping dan array secara langsung dalam class Hama, konsep penggunaan array untuk menyimpan posisi dan variabel lainnya menunjukkan desain yang bersifat modular dan mudah dipahami.**
+
+**Pada class Pemain**
+
+class Pemain {
+
+    GameGoypes gameIni;
+
+    Pemain(GameGoypes gameIni) {
+        this.gameIni = gameIni;
+    }
+
+    // Attribute
+    int[] posisi = new int[] { 29, 10 }; // {x, y}
+
+    // Method
+    void lihatPosisi() {
+        System.out.println("Posisi sekarang x: " + this.ambilX() + ", y: " + this.ambilY());
+    }
+
+    void jalan(int langkahX, int langkahY) {
+        this.posisi[0] = this.posisi[0] + langkahX;
+        this.posisi[1] = this.posisi[1] + langkahY;
+
+        this.aksiBertemuObjekLain();
+    }
+
+    void aksiBertemuObjekLain() {
+        System.out.println("aksiBertemuObjekLain()");
+
+        for (int i = 0; i < this.gameIni.kumpulanTanaman.size(); i++) {
+
+            System.out.println("Cek tanaman " + this.gameIni.kumpulanTanaman.get(i).tipe);
+            System.out.println("posisi X " + this.gameIni.kumpulanTanaman.get(i).posisi[0]);
+            System.out.println("posisi Y " + this.gameIni.kumpulanTanaman.get(i).posisi[1]);
+
+            System.out.println("posisi X pemain " + this.posisi[0]);
+            System.out.println("posisi Y pemain " + this.posisi[1]);
+
+            if (this.posisi[0] == this.gameIni.kumpulanTanaman.get(i).posisi[0]
+                    && this.posisi[1] == this.gameIni.kumpulanTanaman.get(i).posisi[1]) {
+                System.out.println(" WOW INI DIA KETEMU!");
+            }
+        }
+
+        // Pemain bertemu tanaman
+
+        // Pemain bertemu hama
+    }
+
+    int ambilX() {
+        return this.posisi[0];
+    }
+
+    int ambilY() {
+        return this.posisi[1];
+    }
+}
+
+**Array pada Posisi Pemain:**
+
+- Posisi pemain disimpan dalam array dengan dua elemen. Elemen pertama (posisi[0]) adalah koordinat X, dan elemen kedua (posisi[1]) adalah koordinat Y.
+
+**Looping untuk Bertemu Tanaman:**
+
+- Dalam metode aksiBertemuObjekLain(), terdapat looping yang mengiterasi melalui kumpulan tanaman (kumpulanTanaman). Untuk setiap tanaman, dilakukan pengecekan apakah posisi pemain sama dengan posisi tanaman. Jika iya, maka pesan "WOW INI DIA KETEMU!" dicetak ke konsol.
+
+**Penggunaan Array pada Objek Tanaman:**
+
+- Dalam loop tersebut, informasi tentang setiap objek tanaman diakses menggunakan array. tipe adalah variabel non-array, sementara posisi adalah array yang menyimpan koordinat X dan Y.
+
+**Jadi, dalam class Pemain, konsep array digunakan untuk menyimpan posisi pemain dan juga digunakan untuk memeriksa posisi objek tanaman saat melakukan iterasi pada kumpulan tanaman menggunakan loop.**
+
+**Pada class Tanaman**
+
+class Tanaman {
+   
+    String tipe;
+    
+    int[] posisi = new int[] { 0, 0 }; // {x, y}
+    
+    boolean isAktif = true;
+}
+
+**Array pada Posisi Tanaman:**
+
+- Pada bagian ini, posisi adalah sebuah array dengan dua elemen yang merepresentasikan koordinat objek Tanaman di bidang dua dimensi. Elemen pertama (posisi[0]) adalah koordinat X, dan elemen kedua (posisi[1]) adalah koordinat Y. Dengan menggunakan array, posisi objek Tanaman dapat dengan mudah direpresentasikan dan diakses.
+
 ## 11. Bagaimana konsep method pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+
+**Pada Class GameGoypes**
+  
+   import java.util.ArrayList;
+   
+   import java.util.Random;
+   
+   public class GameGoypes {
+   
+    Pemain pemain; // Attribute dari Object Game
+    ArrayList<Tanaman> kumpulanTanaman = new ArrayList<Tanaman>(); //
+    ArrayList<Hama> kumpulanHama = new ArrayList<Hama>();
+
+    // Constructor
+    GameGoypes() {
+        System.out.println("Permainan ini dimulai!!");
+
+        this.pemain = new Pemain(this);
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "JAGUNG";
+                posisi[0] = 10;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PUMKIN";
+                posisi[0] = 20;
+                posisi[1] = 10;
+            }
+        });
+
+        this.kumpulanTanaman.add(new Tanaman() {
+            {
+                tipe = "PAPRIKA";
+                posisi[0] = 30;
+                posisi[1] = 10;
+            }
+        });
+
+        int jumlahAwalHama = 4;
+
+        for (int i = 0; i < jumlahAwalHama; i++) {
+
+            Hama hamaBaru = new Hama();
+
+            Random mesinRandom = new Random();
+
+            hamaBaru.posisi[0] = mesinRandom.nextInt(20);
+            hamaBaru.posisi[1] = mesinRandom.nextInt(20);
+
+            this.kumpulanHama.add(hamaBaru);
+
+            System.out.println("Buat hama ke " + (i + 1) + ", X: " + hamaBaru.posisi[0] +
+                    " Y: " + hamaBaru.posisi[1]);
+        }
+
+        this.pemain.lihatPosisi();
+        this.pemain.jalan(1, 0);
+        this.pemain.lihatPosisi();
+    }
+
+    public static void main(String[] args) { //main method
+
+        GameGoypes game = new GameGoypes();
+    }
+    }
+
+**Main Method:**
+
+- Ini adalah metode main, yang merupakan metode utama yang akan dijalankan pertama kali ketika program dijalankan. Pada metode ini, objek dari class GameGoypes dibuat, dan inisialisasi permainan dimulai melalui constructor.
+
+**Pada class Pemain**
+
+class Pemain {
+
+    GameGoypes gameIni;
+
+    Pemain(GameGoypes gameIni) {
+        this.gameIni = gameIni;
+    }
+
+    // Attribute
+    int[] posisi = new int[] { 29, 10 }; // {x, y}
+
+    // Method
+    void lihatPosisi() {
+        System.out.println("Posisi sekarang x: " + this.ambilX() + ", y: " + this.ambilY());
+    }
+
+    void jalan(int langkahX, int langkahY) { //method
+        this.posisi[0] = this.posisi[0] + langkahX;
+        this.posisi[1] = this.posisi[1] + langkahY;
+
+        this.aksiBertemuObjekLain();
+    }
+
+    void aksiBertemuObjekLain() { //method
+        System.out.println("aksiBertemuObjekLain()");
+
+        for (int i = 0; i < this.gameIni.kumpulanTanaman.size(); i++) {
+
+            System.out.println("Cek tanaman " + this.gameIni.kumpulanTanaman.get(i).tipe);
+            System.out.println("posisi X " + this.gameIni.kumpulanTanaman.get(i).posisi[0]);
+            System.out.println("posisi Y " + this.gameIni.kumpulanTanaman.get(i).posisi[1]);
+
+            System.out.println("posisi X pemain " + this.posisi[0]);
+            System.out.println("posisi Y pemain " + this.posisi[1]);
+
+            if (this.posisi[0] == this.gameIni.kumpulanTanaman.get(i).posisi[0]
+                    && this.posisi[1] == this.gameIni.kumpulanTanaman.get(i).posisi[1]) {
+                System.out.println(" WOW INI DIA KETEMU!");
+            }
+        }
+
+        // Pemain bertemu tanaman
+
+        // Pemain bertemu hama
+    }
+
+    int ambilX() {
+        return this.posisi[0];
+    }
+
+    int ambilY() {
+        return this.posisi[1];
+    }
+}
+
+**Methode lihatPosisi():**
+
+- Methode ini digunakan untuk mencetak posisi pemain ke konsol. Posisi pemain diambil menggunakan metode ambilX() dan ambilY().
+
+**Methode jalan(int langkahX, int langkahY):**
+
+- Methode ini digunakan untuk memindahkan pemain sejauh langkahX dan langkahY. Setelah pemain bergerak, dilakukan panggilan ke metode aksiBertemuObjekLain().
+
+**Methode aksiBertemuObjekLain():**
+
+- Metode ini mengimplementasikan logika yang terkait dengan aksi pemain ketika bertemu dengan objek lain seperti tanaman atau hama. Dalam contoh ini, dilakukan pengecekan apakah pemain bertemu dengan tanaman berdasarkan posisi.
+
+**Metode-metode tersebut membantu dalam mengorganisir logika permainan dan membaginya ke dalam fungsi-fungsi yang terpisah untuk meningkatkan keterbacaan dan pemeliharaan kode. Metode aksiBertemuObjekLain() juga menunjukkan penggunaan looping untuk memeriksa setiap tanaman dalam kumpulan tanaman dan mengecek apakah pemain bertemu dengan salah satunya.**
+
 ## 12. Bagaimana konsep class pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+
+Pada pembuatan game ini terdapat class-class berikut:
+
+- Class GameGoypes
+- Class Hama
+- Class Pemain
+- Class Tanaman
+
+**Class berfungsi untuk menampung isi dari program yang akan di jalankan, di dalamnya berisi atribut / type data dan method untuk menjalankan suatu program.**
+
 ## 13. Jelaskan algoritma buatan sendiri yang digunakan pada pembuatan game ini !
+
+
 
 
 
