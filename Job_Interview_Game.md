@@ -853,6 +853,66 @@ Pada pembuatan game ini terdapat class-class berikut:
 
 ## 13. Jelaskan algoritma buatan sendiri yang digunakan pada pembuatan game ini !
 
+1. **Inisialisasi:**
+   - Tampilkan pesan selamat datang.
+   - Tampilkan menu pemilihan karakter.
+     a. Pemilihan karakter:
+        - Tampilkan daftar karakter yang tersedia.
+        - Biarkan pengguna memilih karakter.
+   - Tampilkan menu pemilihan senjata.
+     b. Pemilihan senjata:
+        - Tampilkan daftar senjata yang tersedia.
+        - Biarkan pengguna memilih senjata.
+   - Tampilkan menu pemilihan tanaman.
+     c. Pemilihan tanaman:
+        - Tampilkan daftar tanaman yang tersedia.
+        - Biarkan pengguna memilih tanaman.
+
+2. **Persiapan Permainan:**
+   - Tampilkan pesan bahwa pengguna telah memilih karakter, senjata, dan tanaman.
+   - Tampilkan tombol "Start" untuk memulai permainan.
+   - Setel level permainan menjadi 1.
+
+3. **Mulai Permainan:**
+   - Ketika tombol "Start" ditekan:
+     a. Tampilkan pesan bahwa permainan telah dimulai.
+     b. Tampilkan level permainan.
+     c. Inisialisasi kondisi permainan, seperti jumlah hama dan tanaman.
+   
+4. **Arena Permainan:**
+   - Selama permainan berlangsung:
+     a. Tampilkan keadaan arena permainan, termasuk tanaman dan hama.
+     b. Biarkan pemain berinteraksi:
+        - Pemain dapat memilih untuk menyerang hama.
+        - Pemain dapat memilih untuk merawat tanaman.
+        - Periksa apakah tanaman terkena hama.
+        - Tampilkan koin yang diperoleh jika hama berhasil dibunuh.
+     c. Perbarui status tanaman dan hama.
+
+5. **Level Up:**
+   - Jika pemain berhasil merawat tanaman dan membunuh semua hama:
+     a. Tampilkan pesan level berhasil.
+     b. Naikkan level permainan.
+     c. Tampilkan pesan bahwa permainan akan lebih menantang.
+
+6. **Game Over:**
+   - Jika tanaman dirusak oleh hama atau level maksimum tercapai:
+     a. Tampilkan pesan "Game Over".
+     b. Tampilkan skor akhir, berdasarkan level dan koin yang diperoleh.
+     c. Biarkan pengguna memilih untuk bermain lagi atau keluar.
+
+7. **Koin dan Pemulihan Tanaman:**
+   - Setiap kali hama dibunuh, tambahkan koin ke total pemain.
+   - Jika tanaman terkena hama, kurangi koin dan tumbuhkan kembali tanaman.
+
+8. **Looping:**
+   - Ulangi langkah-langkah 4 hingga 7 selama pemain masih ingin bermain dan belum mencapai level maksimum.
+
+9. **Finish Game:**
+   - Jika pemain memilih untuk keluar, tampilkan pesan "BERHASIL".
+
+
+
 
 
 
