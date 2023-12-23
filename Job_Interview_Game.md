@@ -45,7 +45,7 @@ Pengguna | Bisa Mendapatkan petunjuk langkah demi langkah terlebih dahulu tentan
 Pengguna | Bisa Merancang dan menata kebun saya sendiri, memilih jenis tanaman dan tata letak yang berbeda | ⭐⭐⭐⭐⭐
 Pengguna | Bisa Memiliki akses ke berbagai tanaman dan alat baru ketika saya mencapai tingkat tertentu atau menyelesaikan misi khusus |⭐⭐⭐⭐⭐
 Pengguna | Bisa Menghadapi musuh yang kuat di tingkat tertentu dan mendapatkan hadiah khusus ketika berhasil mengalahkannya |⭐⭐⭐⭐⭐
-Pengguna | Bisa Arena bermain yang luas ketika sampai level-lever tertinggi |⭐⭐⭐⭐⭐
+Pengguna | Bisa Arena bermain yang luas ketika sampai level-level tertinggi |⭐⭐⭐⭐⭐
 Pengguna | Bisa Berkolaborasi dengan pemain lain untuk melawan hama yang lebih kuat dan mendapatkan hadiah bersama |⭐⭐⭐⭐
 Pengguna | Bisa Mendapatkan misi harian atau mingguan yang menantang saya untuk mengembangkan kebun dengan cara tertentu |⭐⭐⭐
 Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
@@ -57,12 +57,8 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
 ## 4. Teknologi, Library, dan Framework
 
     UI/UX Design : Canva
-    Web Server : 
     Text Editor : VS Code
-    Browser : 
-    Library : 
-    Framework 
-    Database : 
+  
 
 ## 5. Desain User Experience dan User Interface
 ![GOYPES 1-](https://github.com/ekamaysa/Praktikum_Dasar_Pemograman/assets/144700802/a48af216-e205-4458-9ce1-d1b28042dba7)
@@ -77,6 +73,8 @@ Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
 
 
 ## 7. Demonstrasi Video
+
+https://youtu.be/QLhx30OobS0?si=R8VSJGJD2Np3ezZv
 
 ## 8. Bagaimana konsep variable, data type dan operator pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 
@@ -856,14 +854,17 @@ Pada pembuatan game ini terdapat class-class berikut:
 1. **Inisialisasi:**
    - Tampilkan pesan selamat datang.
    - Tampilkan menu pemilihan karakter.
+     
      a. Pemilihan karakter:
         - Tampilkan daftar karakter yang tersedia.
         - Biarkan pengguna memilih karakter.
-   - Tampilkan menu pemilihan senjata.
+        - Tampilkan menu pemilihan senjata.
+          
      b. Pemilihan senjata:
         - Tampilkan daftar senjata yang tersedia.
         - Biarkan pengguna memilih senjata.
-   - Tampilkan menu pemilihan tanaman.
+        - Tampilkan menu pemilihan tanaman.
+          
      c. Pemilihan tanaman:
         - Tampilkan daftar tanaman yang tersedia.
         - Biarkan pengguna memilih tanaman.
@@ -875,30 +876,43 @@ Pada pembuatan game ini terdapat class-class berikut:
 
 3. **Mulai Permainan:**
    - Ketika tombol "Start" ditekan:
+     
      a. Tampilkan pesan bahwa permainan telah dimulai.
+     
      b. Tampilkan level permainan.
+     
      c. Inisialisasi kondisi permainan, seperti jumlah hama dan tanaman.
    
 4. **Arena Permainan:**
    - Selama permainan berlangsung:
+     
      a. Tampilkan keadaan arena permainan, termasuk tanaman dan hama.
+     
      b. Biarkan pemain berinteraksi:
+     
         - Pemain dapat memilih untuk menyerang hama.
         - Pemain dapat memilih untuk merawat tanaman.
         - Periksa apakah tanaman terkena hama.
         - Tampilkan koin yang diperoleh jika hama berhasil dibunuh.
+        - 
      c. Perbarui status tanaman dan hama.
 
 5. **Level Up:**
    - Jika pemain berhasil merawat tanaman dan membunuh semua hama:
+     
      a. Tampilkan pesan level berhasil.
+     
      b. Naikkan level permainan.
+     
      c. Tampilkan pesan bahwa permainan akan lebih menantang.
 
 6. **Game Over:**
    - Jika tanaman dirusak oleh hama atau level maksimum tercapai:
+     
      a. Tampilkan pesan "Game Over".
+     
      b. Tampilkan skor akhir, berdasarkan level dan koin yang diperoleh.
+     
      c. Biarkan pengguna memilih untuk bermain lagi atau keluar.
 
 7. **Koin dan Pemulihan Tanaman:**
