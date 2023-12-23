@@ -48,7 +48,7 @@ Pengguna | Bisa Menghadapi musuh yang kuat di tingkat tertentu dan mendapatkan h
 Pengguna | Bisa Arena bermain yang luas ketika sampai level-level tertinggi |⭐⭐⭐⭐⭐
 Pengguna | Bisa Berkolaborasi dengan pemain lain untuk melawan hama yang lebih kuat dan mendapatkan hadiah bersama |⭐⭐⭐⭐
 Pengguna | Bisa Mendapatkan misi harian atau mingguan yang menantang saya untuk mengembangkan kebun dengan cara tertentu |⭐⭐⭐
-Pengguna | Bisa Bergerak ke kanan |⭐⭐⭐⭐⭐
+
 
 
 ## 3. Struktur Data
